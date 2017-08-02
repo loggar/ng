@@ -1,0 +1,10 @@
+[ref]
+https://angular.io/tutorial
+https://embed.plnkr.co/?show=preview
+
+[directory]
+C:\Users\webnl\Documents\_workspace_js\loggar-ng\ng-hero
+
+[localhost]
+http://localhost:4200/
+

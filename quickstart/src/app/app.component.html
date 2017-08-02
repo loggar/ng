@@ -1,0 +1,70 @@
+<h1>Data Binding</h1>
+<div>
+  first : {{someList[0]}} <br /> second : {{someList[1]}} <br /> third : {{someList[2]}} <br />
+</div>
+
+<h1>Directives</h1>
+<h2>ngIf</h2>
+<div *ngIf='appTitle.length > 0'>{{appTitle}}</div>
+<div *ngIf='appTitle.length > 1'>{{appTitle}}</div>
+<h2>ngFor</h2>
+<ul>
+  <li *ngFor='let lst of appList'>{{lst.ID}} <img [src]='lst.url'></li>
+</ul>
+
+<h1>User Input</h1>
+<div>
+  <input [value]="username" (input)="username = $event.target.value" value="{{username}}" /> <span>{{username}}</span>
+</div>
+
+<h1>Event Binding</h1>
+<div>
+  <button (click)="onClickMe()">Click Me</button>
+  <span>{{cntClickMe}}</span>
+</div>
+
+<h1>Form</h1>
+<sample-form></sample-form>
+
+<h1>Dependency Injection</h1>
+<h2>Service</h2>
+<div>{{valueFromService}}</div>
+
+<h1>Router</h1>
+<nav>
+  <a [routerLink]="['/someWrongLink']">Page Not Found Link</a>
+  <a [routerLink]="['/router1']">Router 1 Link</a>
+  <a [routerLink]="['/router2']">Router 2 Link</a>
+</nav>
+<router-outlet></router-outlet>
+
+<h1>Http CRUD and Error handling</h1>
+<div>
+  <p *ngFor='let product of iproducts'>{{product}}</p>
+</div>
+
+<h1>Standard Pipes</h1>
+<h2>Propertyvalue | lowercase</h2>
+<p>{{appTitle | lowercase }}</p>
+
+<h2>Propertyvalue | uppercase</h2>
+<p>{{appTitle | uppercase }}</p>
+
+<h2>Propertyvalue | slice:start:end</h2>
+<p>{{someList[0] | slice:1:3}}</p>
+
+<h2>Propertyvalue | date:"dateformat"</h2>
+<p>The date of this Tutorial is {{newdate | date:"MM/dd/yy"}}</p>
+
+<h2>Propertyvalue | currency</h2>
+<p>The currency of this Tutorial is {{newValue | currency}}</p>
+
+<h2>Propertyvalue | percent: 'minIntegerDigits.minFractionDigitsmaxFractionDigits'</h2>
+<p>The percentage is {{newPercent | percent}}</p>
+<p>The percentage is {{newPercent | percent:'2.2-4'}}</p>
+
+<h1>Custom Pipes</h1>
+<p>Multiplier: {{2 | Multiplier: 10}}</p>
+
+<h1>Nested Containers</h1>
+<child-app></child-app>

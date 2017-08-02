@@ -1,0 +1,28 @@
+<div class="zzz">
+</div>
+<div class="container logo">
+  <div class="row">
+    <div class="col-md-12 offset-md-8">      
+      <img src="assets/logo224.png" width="400">
+    </div>
+  </div>
+</div>
+
+<div class="container login">
+  <div class="row login">
+    <div class="col">
+      <div class="header">
+        <div>Interisk<span>Audit</span></div>
+      </div>
+    </div>
+    <div class="col">
+      <p-growl [(value)]="msgs" [life]="700"></p-growl>
+      <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+        <input type="text" placeholder="username" name="username" [(ngModel)]="model.username" #username="ngModel" required><br>
+        <input type="password" placeholder="password" name="password" [(ngModel)]="model.password" #password="ngModel" required><br>
+        <input type="button" value="Login" (click)="login()">
+      </form>
+    </div>
+  </div>
+</div>
+

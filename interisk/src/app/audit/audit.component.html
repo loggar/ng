@@ -1,0 +1,294 @@
+<form [formGroup]="myForm" novalidate (ngSubmit)="save()">
+  <div class="container-fluid">
+    <div *ngIf="audit" class="card card-inverse">
+      <div class="card-block">
+        <blockquote class="card-blockquote">
+          <div class="row">
+            <div class="col">
+              <H2 class="text-primary">{{audit.auditTitle}}</H2>
+            </div>
+            <div class="col">
+              <app-edge [auditId]="audit.id"></app-edge>
+              <app-pdf [audit]="audit" [user]="user"></app-pdf>
+               <p-growl [(value)]="msgs" [life]="700"></p-growl>
+              <button type="submit" class="btn btn-md btn-danger btn-flat pull-right">SAVE</button>
+            </div>
+          </div>
+        </blockquote>
+        <select class="form-control" formControlName="siteId" (change)="chageSite()">
+                <option *ngFor="let site of sites"
+                  [value]="site.id" >
+                      {{site.siteName}} - {{site.siteAddress}} 
+                </option>
+                <!--option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option-->
+        </select>
+      </div>
+    </div>
+
+
+    <div formArrayName="answers">
+
+      <div class="card" *ngFor="let answer of answers.controls; let i = index " [formGroupName]="i">
+
+        <div *ngIf="i===0?true:answers.controls[i].controls['category'].value !== answers.controls[i-1].controls['category'].value"
+          class="card-header bg-primary text-white">
+          <h6> {{answer.controls['category'].value}} </h6>
+        </div>
+
+        <!-- Part 02 Start  -->
+        <div class="card-header">
+          <div class="row justify-content-between">
+            <div class="col-sm-8">
+              <h6>
+                {{answer.controls['question'].value}}
+              </h6>
+            </div>
+            <div class="col-sm-4 align-self-end">
+              <div class="btn-group btn-group-radio">
+                <label [ngClass]="{'btn':true, 'btn-secondary': true, 'btn-success': answer.controls['compliance'].value==='YES' }">
+                <input type="radio" formControlName="compliance" value="YES"> YES
+            </label>
+                <label [ngClass]="{'btn':true, 'btn-secondary': true, 'btn-danger': answer.controls['compliance'].value==='NO' }">
+                <input type="radio" formControlName="compliance" value="NO"> NO
+            </label>
+                <label [ngClass]="{'btn':true, 'btn-secondary': true, 'btn-info': answer.controls['compliance'].value==='NA' }">
+                <input type="radio" formControlName="compliance" value="NA"> N/A           
+            </label>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- Part 02 End  -->
+        <!-- Part 03 Start  -->
+        <!--
+        <div class="card-block d-inline-flex" *ngIf="answer.controls['compliance'].value==='NO'">
+          <div class="btn-group ml-auto switch-field">
+            <label class="btn btn-secondary">
+                    <input type="radio">Risk : 
+                    </label>
+            <label [ngClass]="{'btn':true, 'btn-secondary': true, 'btn-success': answer.controls['risk'].value==='Minor' }">
+                    <input type="radio" formControlName="risk" value="Minor">Minor
+                    </label>
+            <label [ngClass]="{'btn':true, 'btn-secondary': true, 'btn-warning': answer.controls['risk'].value==='Medium' }">
+                    <input type="radio" formControlName="risk" value="Medium">Medium
+                    </label>
+            <label [ngClass]="{'btn':true, 'btn-secondary': true, 'btn-danger': answer.controls['risk'].value==='Major' }">
+                <input type="radio" formControlName="risk" value="Major">Major
+                    </label>
+          </div>
+
+          <div class="switch-field" style="padding-left:1em">
+            <label class="btn btn-primary">
+                  <input data-toggle="modal" data-target="#exampleModalLong" (click)="tabActive(0);clickModal(answer.controls['id'].value)">Add Memo
+                  </label>
+            <label class="btn btn-primary">
+                  <input data-toggle="modal" data-target="#exampleModalLong" (click)="tabActive(1);clickModal(answer.controls['id'].value)">Add Photo
+                  </label>
+          </div>
+        </div>
+        -->
+        <div class="card-block" *ngIf="answer.controls['compliance'].value==='NO'">
+          
+          <div class="row">
+            <div class="col">
+              <div class="btn-group btn-group-radio">
+                <label class="btn btn-secondary">
+              Risk:
+              </label>
+                <label [ngClass]="{'btn':true, 'btn-secondary': true, 'btn-success': answer.controls['risk'].value==='Minor' }">
+                    <input type="radio" formControlName="risk" value="Minor">Minor
+                    </label>
+                <label [ngClass]="{'btn':true, 'btn-secondary': true, 'btn-warning': answer.controls['risk'].value==='Medium' }">
+                    <input type="radio" formControlName="risk" value="Medium">Medium
+                    </label>
+                <label [ngClass]="{'btn':true, 'btn-secondary': true, 'btn-danger': answer.controls['risk'].value==='Major' }">
+                <input type="radio" formControlName="risk" value="Major">Major
+                    </label>
+              </div>
+            </div>
+            <div class="col">
+            <div class="btn-group btn-group-radio mx-2">
+              <label class="btn btn-primary mx-1">
+                  <input data-toggle="modal" data-target="#exampleModalLong" (click)="tabActive(0);clickModal(answer.controls['id'].value)">Add Action
+                  </label>
+              <label class="btn btn-primary">
+                  <input data-toggle="modal" data-target="#exampleModalLong" (click)="tabActive(1);clickModal(answer.controls['id'].value)">Add Photo
+                  </label>
+            </div>
+            </div>
+          </div>
+          
+        </div>
+
+
+        <!-- Part 03 End  -->
+      </div>
+
+    </div>
+
+
+  </div>
+</form>
+{{uploader.queue}}
+<!--<pre>{{ myForm.value | json }}</pre> -->
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <!-- Modal Header START-->
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Add Action for Question {{currentId}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <!-- Modal Header END-->
+      <!-- FORM START -->
+      <form [formGroup]="myForm" novalidate (ngSubmit)="save()">
+        <!-- MODAL BODY START -->
+        <div class="modal-body">
+          <!-- CARD HEADER START -->
+          <div class="card-header">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs card-header-tabs" role="tablist">
+              <li class="nav-item">
+                <a [ngClass]="{'nav-link':true, 'active':tabNo==0}" (click)="tabActive(0)" style="cursor: pointer">Action</a>
+              </li>
+              <li class="nav-item">
+                <a [ngClass]="{'nav-link':true, 'active':tabNo==1}" (click)="tabActive(1)" style="cursor: pointer">Photo</a>
+              </li>
+            </ul>
+          </div>
+          <!-- CARD HEADER END -->
+          <!-- CARD BLOCK START -->
+          <div class="card-block">
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+              <!-- 1st tab start -->
+              <div [ngClass]="{'tab-pane':true, 'active':tabNo==0}" id="tab01" role="tabpanel">
+
+                <div formArrayName="answers">
+                  <div *ngFor="let answer of answers.controls; let i = index " [formGroupName]="i">
+                    <div *ngIf="answers.controls[i].controls['id'].value===currentId">
+                      <textarea class="form-control" formControlName="memo" rows="10"></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 2nd tab start -->
+              <div [ngClass]="{'tab-pane':true, 'active':tabNo==1}" id="tab02" role="tabpanel">
+                <!--
+                <div formArrayName="photos">
+                  <div *ngFor="let photo of photos.controls; let i = index " [formGroupName]="i">
+                    <div *ngIf="photo.controls['auditDetailId'].value===currentId">
+                      {{photo.value | json}} {{photo.controls['photoLocation'].value|json}}
+                      <img [src]="apiUrl + 'images/' + photo.controls['photoLocation'].value + '/' + photo.controls['photoName'].value">
+                    </div>
+                  </div>
+                </div>
+-->
+
+
+
+
+
+                <ng-container *ngIf="show">
+                  <p-galleria [images]="images" panelWidth="430" panelHeight="290" [showCaption]="false"></p-galleria>
+                </ng-container>
+
+
+
+
+                <!--
+  <p-galleria [images]="images" panelWidth="430" panelHeight="290" [showCaption]="false"></p-galleria>
+                <ul>
+                  <ng-container *ngIf="show">
+                    <li *ngFor="let image of images">
+                      <img src="{{image.source}}" class="tn" width="191" height="146">
+                    </li>
+                  </ng-container>
+                </ul>
+                -->
+
+                <!--
+                <p-fileUpload name="myfile[]" [url]="this.apiUrl + 'upload'"></p-fileUpload>
+                <p-growl [value]="msgs"></p-growl>
+-->
+                <!-- upload start >
+                <form>
+                <p-fileUpload name="file" url="http://localhost:3000/api/upload" (onUpload)="onUpload($event)" (onBeforeUpload)="onBeforeUpload($event)" multiple="multiple" accept="image/*"
+                  maxFileSize="1000000">
+                  <ng-template pTemplate type="content">
+                    <ul *ngIf="uploadedFiles.length">
+                      <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
+                    </ul>
+                  </ng-template>
+                </p-fileUpload>
+                </form>
+< upload end -->
+
+                <ul class="list-group">
+                  <div *ngFor="let item of uploader.queue">
+                    <li class="list-group-item">
+                      {{ item.file.name }} {{ item.file.size/1024/1024 | number:'.2' }} MB
+                      <i class="material-icons" style="cursor: pointer" (click)="item.remove()">close</i>
+                      <span *ngIf="item.isSuccess"><i class="fa fa-check text-success" aria-hidden="true"></i></span>
+                    </li>
+                  </div>
+                </ul>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploader.progress + '%' }"></div>
+                </div>
+                <div>
+                  <label for="uploadFile" class="btn btn-success btn-s">
+                    <input id="uploadFile" type="file" class="custom-file-input" ng2FileSelect [uploader]="uploader" multiple/>
+                    Choose
+                    </label>
+                  <label for="uploadB1" class="btn btn-success btn-s">
+                    <!--prepareDocumentSave();uploader.uploadAll();aftercheck(); -->
+                    <button id="uploadB1" type="button" (click)="DocumentSave()" [disabled]="!uploader.getNotUploadedItems().length">                                    
+                    </button>
+                    Upload All
+                    </label>
+                  <label for="uploadB2" class="btn btn-danger btn-s">
+                    <button id="uploadB2" type="button" class="btn btn-danger btn-s" (click)="uploader.clearQueue()" [disabled]="!uploader.queue.length">
+                    </button>
+                    Clear Que
+                  </label>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+          <!-- CARD BLOCK END -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+        <!-- MODAL BODY END -->
+      </form>
+      <!-- FORM END -->
+    </div>
+  </div>
+</div>
+<!--
+<ul>
+  <ng-container *ngIf="show">
+    <li *ngFor="let image of images">
+      <img src="{{image.source}}" class="tn" width="191" height="146">
+    </li>
+  </ng-container>
+</ul>
+<on-changes id="changeEvent" [power]="uploader.getNotUploadedItems().length" (uploaded)="aftercheck()"></on-changes>
+-->
+<on-changes id="changeEvent" [power]="uploader.getNotUploadedItems().length" (uploaded)="aftercheck()"></on-changes>
+
+

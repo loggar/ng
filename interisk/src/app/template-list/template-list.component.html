@@ -1,0 +1,42 @@
+<div class="container-fluid">
+  <div class="pull-right p-2">
+    <a routerLink="/template">
+    <button type="button" class="btn btn-md btn-info">New Template</button>
+  </a>
+  </div>
+
+  <table class="table table-striped table-bordered table-hover" cellspacing="0" width="100%">
+    <thead class="thead-default">
+      <tr>
+        <th>ID</th>
+        <!--th>Title</th>
+        <th>Audit Type</th>
+        <th>Site</th>
+        <th>Audit</th>
+        <th>Description</th-->
+        <th>Audit Type</th>
+        <th>Creator</th>
+        <th class="hidden-xs-down">Created Date</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of templates; let i = index">
+        <td>{{row.id}}</td>
+        <td>{{row.auditTitle}}</td>
+        <td>{{row.auditor}}</td>
+        <td class="hidden-xs-down">{{row.modifyDate | date:'y-MM-dd'}}</td>
+        <!--td> <span *ngIf="!buttonVisible">{{row.auditDescription}}</span></td-->
+        <td>
+          <button type="button" class="btn btn-sm btn-primary" (click)="goAudit(row.id)">
+            New Audit
+          </button>
+          <a routerLink="/template/{{row.id}}">
+            <button type="button" class="btn btn-sm btn-primary">  Edit Template  </button>
+          </a>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
