@@ -1,0 +1,17 @@
+{
+    "/some/path": {
+        "target": "http://localhost:8080",
+        "secure": "false",
+        "pathRewrite": {
+            "^/api": ""
+        },
+        "logLeve": "debug"
+    },
+    "/socket.io": {
+        "target": "http://localhost:5050",
+        "pathRewrite": {
+            "^/socket.io": ""
+        },
+        "logLeve": "debug"
+    }
+}
