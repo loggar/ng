@@ -1,2 +1,1 @@
 #loggar angular
-#loggar angular
