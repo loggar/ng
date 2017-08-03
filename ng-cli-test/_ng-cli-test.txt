@@ -26,14 +26,18 @@ proxy.config.json
 
 ng serve --proxy-config proxy.config.json
 
-[port]
-angular-cli.json
-
+[port][angular-cli.json]
 "defaults": {
     "serve": {
       "host": "localhost",
-      "port":4204
+      "port":4200
     }
 }
+
+[assets][angular-cli.json]
+"assets": [
+    "assets",
+    "favicon.ico"
+  ]
 
 
