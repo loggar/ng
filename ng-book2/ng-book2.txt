@@ -1,0 +1,10 @@
+ng new first-app
+
+cd first-app
+
+npm install
+
+npm start
+
+
+
