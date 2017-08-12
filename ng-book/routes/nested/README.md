@@ -1,4 +1,4 @@
-# ng-book 2: Nested Routes 
+# ng-practice: Nested Routes 
 
 ## Quick start
 

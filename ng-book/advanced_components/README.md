@@ -1,4 +1,4 @@
-# ng-book 2: Advanced Components Example
+# ng-practice: Advanced Components Example
 
 > A demo app showing advanced components
 

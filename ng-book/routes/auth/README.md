@@ -1,4 +1,4 @@
-# ng-book 2: Authenticated Routes
+# ng-practice: Authenticated Routes
 
 ## Quick start
 

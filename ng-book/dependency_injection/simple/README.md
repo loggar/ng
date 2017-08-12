@@ -1,4 +1,4 @@
-# ng-book 2: Dependency Injection Simple
+# ng-practice: Dependency Injection Simple
 
 ## Quick start
 

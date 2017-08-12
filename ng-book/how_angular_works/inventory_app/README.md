@@ -1,4 +1,4 @@
-# ng-book 2: Inventory App
+# ng-practice: Inventory App
 
 > An Angular 2 inventory app
 

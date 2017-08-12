@@ -1,7 +1,7 @@
 {
-  "name": "ng-book2-forms",
+  "name": "ng-practice-forms",
   "version": "1.0.0",
-  "description": "ng-book 2: Forms in Angular 2",
+  "description": "ng-practice: Forms in Angular 2",
   "main": "index.js",
   "scripts": {
     "clean": "true",

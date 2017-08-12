@@ -4,7 +4,7 @@
 
 # Angular 2 Redux Chat [![Join the chat at https://gitter.im/ng-book/ng-book](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ng-book/ng-book?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-> An Angular 2 chat app using [Angular 2](https://angular.io/), [Redux](https://github.com/reactjs/redux), [Webpack](https://webpack.github.io/), [TypeScript](http://www.typescriptlang.org/), Services, Injectables, [Karma](http://karma-runner.github.io/), Forms, [SCSS](http://sass-lang.com/), and [tslint](http://palantir.github.io/tslint/) by the [ng-book 2 team](https://ng-book.com/2)
+> An Angular 2 chat app using [Angular 2](https://angular.io/), [Redux](https://github.com/reactjs/redux), [Webpack](https://webpack.github.io/), [TypeScript](http://www.typescriptlang.org/), Services, Injectables, [Karma](http://karma-runner.github.io/), Forms, [SCSS](http://sass-lang.com/), and [tslint](http://palantir.github.io/tslint/) by the [ng-practice team](https://ng-book.com/2)
 
 This repo shows an example chat application using Redux and Angular 2. The goal is to show how to use the Redux data architecture pattern within Angular 2, using the core Redux library. It also features:
 
@@ -97,7 +97,7 @@ You can see that in the constructor we inject our `Store` (which is typed to `Ap
 
 This pattern is used throughout the app. 
 
-Understanding how everything fits together with Redux can be tricky, but this code is heavily commented. One strategy to understand this code is to start at the components and see how they read the Store with selectors, dispatch actions, and follow that through the reducers. The other strategy is to get a copy of [ng-book 2](https://ng-book.com/2) where we explain each line in detail over ~60 pages.
+Understanding how everything fits together with Redux can be tricky, but this code is heavily commented. One strategy to understand this code is to start at the components and see how they read the Store with selectors, dispatch actions, and follow that through the reducers. The other strategy is to get a copy of [ng-practice](https://ng-book.com/2) where we explain each line in detail over ~60 pages.
 
 ## State
 
@@ -305,15 +305,15 @@ If you're having trouble getting this project running, feel free to [open an iss
 
 ___
 
-# ng-book 2
+# ng-practice
 
 <a href="https://ng-book.com/2">
-<img align="right" src="app/images/readme/ng-book-2-as-book-cover-pigment.png" alt="ng-book 2" width="148" height="250" />
+<img align="right" src="app/images/readme/ng-book-2-as-book-cover-pigment.png" alt="ng-practice" width="148" height="250" />
 </a>
 
-This repo was written and is maintained by the [ng-book 2](https://ng-book.com/2) team. In the book we talk about each line of code in this app and explain why it's there and how it works.
+This repo was written and is maintained by the [ng-practice](https://ng-book.com/2) team. In the book we talk about each line of code in this app and explain why it's there and how it works.
 
-This app is only one of several apps we have in the book. If you're looking to learn Angular 2, there's no faster way than by spending a few hours with ng-book 2.
+This app is only one of several apps we have in the book. If you're looking to learn Angular 2, there's no faster way than by spending a few hours with ng-practice.
 
 <div style="clear:both"></div>
 

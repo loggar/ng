@@ -22,7 +22,7 @@ describe('angular2-reddit App', function() {
 
   it('should add a new link', () => {
     page.navigateTo();
-    page.addLink('ng-book 2', 'https://ng-book.com');
+    page.addLink('ng-practice', 'https://ng-book.com');
     expect(page.getVoteScore(3)).toEqual('0');
   });
  

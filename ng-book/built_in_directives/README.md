@@ -1,4 +1,4 @@
-# ng-book 2: Built-in Directives Examples
+# ng-practice: Built-in Directives Examples
 
 > A demo app showing Angular's built-in directives
 

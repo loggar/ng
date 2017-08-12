@@ -1,4 +1,4 @@
-# ng-book 2: Basic Routing
+# ng-practice: Basic Routing
 
 ## Quick start
 

@@ -72,7 +72,7 @@ const routes: Routes = examples
       <a href="#" class="header item">
         <img class="logo" 
              src="${require('images/logos/ng-book-2-minibook.png')}" />
-        ng-book 2
+        ng-practice
       </a>
       <div class="header item borderless">
         <h1 class="ui header">

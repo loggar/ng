@@ -1,4 +1,4 @@
-# ng-book 2: ng1/ng2 hybrid example app
+# ng-practice: ng1/ng2 hybrid example app
 
 > This project shows how to create a hybrid ng1/ng2 app
 

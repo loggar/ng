@@ -1,4 +1,4 @@
-# ng-book 2: Dependency Injection - Complex Example
+# ng-practice: Dependency Injection - Complex Example
 
 ## Quick start
 

@@ -1,4 +1,4 @@
-# ng-book 2: ng1 example app
+# ng-practice: ng1 example app
 
 ## Quick start
 

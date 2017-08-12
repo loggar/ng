@@ -1,4 +1,4 @@
-# ng-book 2: The Complete Guide to Angular 2 Sample Code
+# ng-practice: The Complete Guide to Angular 2 Sample Code
 
 ## Organization
 
@@ -21,4 +21,4 @@ We're currently developing the book and this code. If you have any feedback on t
 
 Cheers!
 
-Nate, Felipe, and the ng-book 2 team
+Nate, Felipe, and the ng-practice team

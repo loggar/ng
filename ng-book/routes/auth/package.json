@@ -1,7 +1,7 @@
 {
-  "name": "ng-book2-routes-auth",
+  "name": "ng-practice-routes-auth",
   "version": "1.0.0",
-  "description": "ng-book 2: Routes and Authentication",
+  "description": "ng-practice: Routes and Authentication",
   "main": "index.js",
   "scripts": {
     "go": "./node_modules/.bin/webpack-dev-server",

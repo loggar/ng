@@ -1,4 +1,4 @@
-# ng-book 2: Routing - Music
+# ng-practice: Routing - Music
 
 ## Quick start
 

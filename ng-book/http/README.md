@@ -1,4 +1,4 @@
-# ng-book 2: HTTP
+# ng-practice: HTTP
 
 ## Quick start
 
