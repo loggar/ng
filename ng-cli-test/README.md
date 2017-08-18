@@ -29,3 +29,49 @@ Run `ng github-pages:deploy` to deploy to GitHub Pages.
 ## Further help
 
 To get more help on the `angular-cli` use `ng help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## install
+```
+$ npm install -g angular-cli
+$ ng new project-name
+$ cd project-name
+
+$ npm start
+$ npm test
+$ npm run pree2e
+$ npm run e2e
+
+$ ng g component new-component-name
+$ ng g directive new-directive-name
+$ ng g pipe new-pipe-name
+$ ng g service new-service-name
+$ ng g class new-class-name
+$ ng g interface new-interface-name
+$ ng g enum new-enum-name
+```
+
+## proxy
+>proxy.config.json
+```
+ng serve --proxy-config proxy.config.json
+```
+
+## port
+>angular-cli.json
+```json
+"defaults": {
+    "serve": {
+      "host": "localhost",
+      "port":4200
+    }
+}
+```
+
+
+>angular-cli.json
+```json
+"assets": [
+	"assets",
+	"favicon.ico"
+]
+```
