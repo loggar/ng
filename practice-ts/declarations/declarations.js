@@ -10,7 +10,7 @@ var Cl = (function () {
     function Cl() {
         this.x = "str"; // instance member
     }
-    Cl.x = 1; // static menber
+    Cl.x = 1; // static member
     return Cl;
 }());
 console.log('Cl.x=' + Cl.x);
