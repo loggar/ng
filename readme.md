@@ -1,9 +1,5 @@
-#loggar angular / typescript
+# Charly
 
-## init ts project
+This repository has been writing for a personal development practice and building references.
 
-```
-$ mkdir newTypescriptProject
-$ cd newTypescriptProject
-$ tsc --init
-```
+## Angular, Typescript
