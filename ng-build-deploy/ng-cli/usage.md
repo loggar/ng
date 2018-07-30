@@ -1,5 +1,3 @@
-# angular practice
-
 ## using angular-cli
 
 ```
