@@ -53,5 +53,5 @@ coverage/
 tmp/
 _tmp/
 
-# ide generate
+# visual studio code
 .vscode/
