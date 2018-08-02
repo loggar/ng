@@ -44,8 +44,14 @@ out-tsc
 build
 
 # test
-_test-output
-_temp
+_test-output/
+
+# code coverage
+coverage/
+
+# temporary dirs
+tmp/
+_tmp/
 
 # visual studio code
-.vscode
+.vscode/
