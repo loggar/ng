@@ -41,7 +41,7 @@ Thumbs.db
 dist
 tmp
 out-tsc
-build
+.build
 
 # test
 _test-output/
