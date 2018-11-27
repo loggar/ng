@@ -1,10 +1,10 @@
-import { LoggarNgHeroPage } from './app.po';
+import { NgHeroPage } from './app.po';
 
 describe('ng-hero App', () => {
-  let page: LoggarNgHeroPage;
+  let page: NgHeroPage;
 
   beforeEach(() => {
-    page = new LoggarNgHeroPage();
+    page = new NgHeroPage();
   });
 
   it('should display welcome message', done => {
