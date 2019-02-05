@@ -1,3 +1,3 @@
 # Charly
 
-## Angular, AngularJS
+## Angular
