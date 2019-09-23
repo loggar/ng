@@ -1,3 +1,1 @@
-# Charly
-
-## Angular
+# Angular
