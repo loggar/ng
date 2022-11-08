@@ -28,7 +28,7 @@
     "docs": "npm run clean:docs && cd docs && ../node_modules/.bin/typedoc --options typedoc.json --excludePrivate"
   },
   "dependencies": {
-    "loader-utils": "^0.2.16"
+    "loader-utils": "^1.4.1"
   },
   "devDependencies": {
     "@angular/common": "~2.4.1",
